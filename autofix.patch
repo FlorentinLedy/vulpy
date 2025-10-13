@@ -1,0 +1,9 @@
+diff --git a/bad/vulpy-ssl.py b/bad/vulpy-ssl.py
+--- a/bad/vulpy-ssl.py
++++ b/bad/vulpy-ssl.py
+@@ -26,4 +26,4 @@
+ def before_request():
+     g.session = libsession.load(request)
+ 
+-app.run(debug=True, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
++app.run(debug=False, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
