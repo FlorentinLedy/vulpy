@@ -1,9 +1,9 @@
 click
-cryptography
-Flask
+cryptography==b924696b2e8731f39696584d12cceeb3aeb2d874
+Flask==3.1.3
 geoip2
 jsonschema
-PyJWT
+PyJWT==2.13.0
 pyotp
 qrcode
-requests
+requests==2.32.4
