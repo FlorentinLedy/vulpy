@@ -9,7 +9,7 @@ def login(username, password):
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
-    user = c.execute("SELECT * FROM users WHERE username = '{}' and password = '{}'".format(username, password)).fetchone()
+    user = c.execute("SELECT * FROM users WHERE username = ? and password = ?", (username, password)).fetchone()
 
     if user:
         return user['username']
@@ -50,7 +50,7 @@ def password_change(username, password):
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
-    c.execute("UPDATE users SET password = '{}' WHERE username = '{}'".format(password, username))
+    c.execute("UPDATE users SET password = ? WHERE username = ?", (password, username))
     conn.commit()
 
     return True
